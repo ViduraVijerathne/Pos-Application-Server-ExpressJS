@@ -17,7 +17,9 @@ const productAuth = require('./routers/product/product')
 app.use('/auth',authRoute);
 app.use('/product',productAuth);
 
-
+app.get('/',(req,res)=>{
+  res.send("done")
+})
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
