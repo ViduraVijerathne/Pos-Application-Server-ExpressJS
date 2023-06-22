@@ -1,10 +1,12 @@
 const mysql = require('mysql2');
+require('dotenv').config();
+
 class Database {
     constructor() {
         this.connection = null;
-        this.userName = 'root';
-        this.password = '6jfmd672@V';
-        this.database = 'pos_app';
+        this.userName = process.env.DB_USR_NAME;
+        this.password = process.env.DB_PASSWORD;
+        this.database = process.env.DB_DATABASE;
         this.conCount = 0;
     }
 
@@ -12,11 +14,11 @@ class Database {
         if (!this.connection) {
             this.conCount = this.conCount + 1;
             this.connection = mysql.createConnection({
-                host: 'localhost',
+                host: process.env.DB_SERVER,
                 user: this.userName,
                 password: this.password,
                 database: this.database,
-                port: 3306
+                port: process.env.DB_PORT
             });
         }
 
