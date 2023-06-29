@@ -4,30 +4,26 @@ const router = express.Router();
 router.get('/inhight',(req,res)=>{
     resObj= {body:[
         {
-            title : "Total sales",
-            count : 250,
+            title : "Total sales1",
+            count : 25.0,
         
         },
         {
-            title : "Total oders ",
-            count : 250,
+            title : "Total Sex",
+            count : 251100,
+        
+        },
+        {
+            title : "Total Income 3",
+            count : 6541011,
         
         },
         {
             title : "Total Income",
-            count : 250,
+            count : 55250.0,
         
         },
-        {
-            title : "Total Income",
-            count : 250,
-        
-        },
-        {
-            title : "Total OutGoing",
-            count : 250,
-        
-        },
+       
     ]}
     res.send(resObj)
 })
